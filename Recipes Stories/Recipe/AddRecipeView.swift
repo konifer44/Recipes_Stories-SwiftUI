@@ -11,7 +11,7 @@ struct AddRecipeView: View {
     @EnvironmentObject var firebase: Firebase
     @Environment(\.presentationMode) var presentationMode
     
-    @StateObject var recipeViewModel = RecipeViewModel(with: RecipeModel(ref: nil, key: "", id: UUID(), name: "Pizza", shortRecipeDescribe: "sdas", selectedTimeOfPrepare: 5, levelOfDifficulty: "hard", rating: 3, isFavourite: true, numberOfIngredients: 4, numberOfSteps: 4, ingredientsList: [IngredientModel(id: UUID(), name: "sdd", quantity: "sd", unit: 1)], methodStepsList: [MethodStepModel(id: UUID(), name: "name", describe: "describe")]))
+    @StateObject var recipeViewModel = RecipeViewModel(with: RecipeModel(ref: nil, key: "", id: UUID(), name: "", shortRecipeDescribe: "", selectedTimeOfPrepare: 0, levelOfDifficulty: "", rating: 0, isFavourite: false, numberOfIngredients: 0, numberOfSteps: 0, ingredientsList: [], methodStepsList: []))
     
     @State private var isEmptyFormAlertIsPresented = false
     @State private var showingImagePicker = false
@@ -132,10 +132,6 @@ struct AddRecipeView: View {
                 }
                 .listRowInsets(EdgeInsets())
                 
-                Button("Save to database"){
-                    //  autheniticationSession.saveData(post: )
-                    firebase.saveData(recipe: recipeViewModel)
-                }
             }
             .navigationBarTitle("Add recipe")
             .navigationBarItems(
