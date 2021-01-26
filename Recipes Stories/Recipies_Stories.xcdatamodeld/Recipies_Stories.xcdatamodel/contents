@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String"/>
+        <relationship name="ofRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredient" inverseEntity="Recipe"/>
+    </entity>
+    <entity name="MethodStep" representedClassName="MethodStep" syncable="YES">
+        <attribute name="describe" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="ofRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="methodStep" inverseEntity="Recipe"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="isFavourite" optional="YES" attributeType="Boolean" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="levelOfDifficulty" optional="YES" attributeType="String"/>
+        <attribute name="likes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="method" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shortRecipeDescribe" optional="YES" attributeType="String"/>
+        <attribute name="timeOfPrepare" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ingredient" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Ingredient" inverseName="ofRecipe" inverseEntity="Ingredient"/>
+        <relationship name="methodStep" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MethodStep" inverseName="ofRecipe" inverseEntity="MethodStep"/>
+    </entity>
+    <elements>
+        <element name="Ingredient" positionX="-54" positionY="45" width="128" height="89"/>
+        <element name="MethodStep" positionX="-54" positionY="63" width="128" height="89"/>
+        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="209"/>
+    </elements>
+</model>
