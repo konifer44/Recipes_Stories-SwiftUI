@@ -14,7 +14,7 @@
 
 ## Light & Darkmode
 
-<img src="3.png" alt="drawing" width="1000"/>
+<img src="4.png" alt="drawing" width="1000"/>
 
 ## App funcionality
   - Create new account and login
