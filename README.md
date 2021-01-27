@@ -2,7 +2,7 @@
 
 >Recipes Stories is prefect place to save all your recipes and ideas. You will never forget again your recipes. Don't know to eat? Easy! With this app You will allways find perfect recipe.
   
-  <img src="1.png" alt="drawing" width="1000"/>
+  <img src="1.png" alt="drawing" width="800"/>
 
 ## Welcome & Login Screen
 
